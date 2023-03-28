@@ -1,3 +1,14 @@
+#mkdir ~/entrancemusic
+#cd ~/entrancemusic
+
+#Copy your mp3 into this directory
+#sudo apt update && sudo apt upgrade -y
+#sudo apt install mpg123
+
+import RPi.GPIO as GPIO
+import time
+import run
+ 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 PIR_PIN = 23
@@ -10,6 +21,7 @@ print ('Ready')
 while True:
   if GPIO.input(PIR_PIN):
     print('Motion Detected')
-    
+    run(“mpg123 ~/entrancemusic/’(ENTER NAME OF RECORDING).mp3′”, shell=True)
   time.sleep(1)
+    run(“mpg123 ~/entrancemusic/’(ENTER NAME OF ANSWER RECORDING).mp3′”, shell=True)
 
