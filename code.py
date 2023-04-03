@@ -5,7 +5,7 @@ import RPi.GPIO as GPIO
 import time
 import os
 GPIO.setmode(GPIO.BCM)
-GPIO_PIR=21
+GPIO_PIR=7
 GPIO.setup(GPIO_PIR, GPIO.IN)
 
 Current_State= 0
@@ -13,11 +13,10 @@ Previous_State= 0
 
 try:
     while GPIO.input(GPIO_PIR)==1:
-        Current_State= 0
-        if Current_State=1 and Previous_State=0:
-        question = random.randint(1,10)
+        if Current_State==1 and Previous_State==0:
+            question = random.randint(1,10)
         if question== 1:
-	        os.system(“espeak -ven+f3 -k5 -s150 \“What is matter\””)
+	        os.system("espeak -ven+f3 -k5 -s150 \"What is matter\"")
 	#Insert Email mechanism here
 	while GPIO.input(GPIO_PIR)== 0:
 	        os.system("espeak -ven+f3 -k5 -s150 \“Matter is anything that has a mass and takes up space\”")
@@ -57,3 +56,6 @@ try:
 	        os.system("espeak -ven+f3 -k5 -s150 /“What are the five senses/”")
     while GPIO.input(GPIO_PIR)== 0:
 	        os.system("espeak -ven+f3 -k5 -s150 /“The five senses are touch, taste, hearing, sight, and smell/"")
+Except: 
+    Current_State= 0 and Current_State= 0
+    
