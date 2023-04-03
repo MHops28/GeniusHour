@@ -11,7 +11,7 @@ while True:
         if question == 1:
             os.system("espeak -ven+f3 -k5 -s150 \"What is matter\"")
         # if question == 2:
-        #     os.system("espeak -ven+f3 -k5 -s150 \“How many days are in a week\”")
+        #     os.system("espeak -ven+f3 -k5 -s150 \"How many days are in a week\"")
         
         #
         #
