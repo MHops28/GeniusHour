@@ -4,7 +4,7 @@ import os
 GPIO.setmode(GPIO.BCM)
 GPIO_PIR=7
 GPIO.setup(GPIO_PIR, GPIO.IN)
-needs_answer=false
+needs_answer=False
 question = 0
 while True:
     if GPIO.input(GPIO_PIR) == 1:
@@ -28,7 +28,6 @@ while True:
             os.system("espeak -ven+f3 -k5 -s150 \"There are twenty-six letters in the English alphabet\"")
         if needs_answer and question == 10:
             os.system("espeak -ven+f3 -k5 -s150 \"The five senses are taste, touch, hearing, sight, and scent\"")
-    
             #
             #
             #
